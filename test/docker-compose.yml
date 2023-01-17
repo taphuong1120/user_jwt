@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  postgres-local:
+    image: postgres:12.10
+    restart: always
+    container_name: postgresdb
+    environment:
+      - POSTGRES_PASSWORD=tp120
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=user
+    volumes:
+      - ./taphuong:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
